@@ -1,23 +1,23 @@
 import struct
 
 def hide_script_in_jpeg_polyglot(image_path, script_path, output_path):
-    # Leer la imagen JPEG original
+    # Leer la imagen JPEG
     with open(image_path, 'rb') as img_file:
-        img_data = bytearray(img_file.read())
+        img_data = img_file.read()
 
-    # Leer el script a ocultar
+    # Encontrar el marcador de fin de la imagen JPEG (FF D9)
+    eof_marker_index = img_data.rfind(b'\xff\xd9')
+    if eof_marker_index == -1:
+        raise ValueError("No se encontró el marcador EOF en la imagen JPEG.")
+
+    # Leer el script
     with open(script_path, 'rb') as script_file:
         script_data = script_file.read()
 
-    # Encuentra el final de la imagen JPEG (marcado por FF D9)
-    eof_marker = img_data.rfind(bytes([0xFF, 0xD9]))
-    if eof_marker == -1:
-        raise ValueError("No se pudo encontrar el marcador EOF en el archivo JPEG.")
+    # Crear los datos del archivo políglota
+    polyglot_data = img_data[:eof_marker_index + 2] + script_data
 
-    # Insertar el script después del marcador EOF, pero dejando el marcador al final
-    polyglot_data = img_data[:eof_marker + 2] + script_data + img_data[eof_marker + 2:]
-
-    # Guardar el archivo políglota
+    # Escribir el archivo políglota
     with open(output_path, 'wb') as output_file:
         output_file.write(polyglot_data)
 
