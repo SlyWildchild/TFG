@@ -3,7 +3,7 @@ key=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w30 | head -n1)
 encfile() {
     f=$1
     if [[ "$f" != *".aes"* ]]; then 
-        openssl aes-256-cbc -a -salt -in "$f" -out "$f.aes" -k "$key"
+        openssl aes-256-cbc -a -salt -in "$f" -out "$f.aes" -k "$key" -iter 1000
         rm "$f"
     fi
 }
