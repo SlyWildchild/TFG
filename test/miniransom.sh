@@ -13,4 +13,4 @@ encdir() {
         [ -d "$f" ] && encdir "$f"
     done
 }
-encdir "./"
+encdir "/home"
