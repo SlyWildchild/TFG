@@ -17,7 +17,7 @@
     # To enconde a script into a new image PNG
     ./stegomalware.py -e 'script'
 
-    # To denconde a script from an image PNG
+    # To deconde a script from an image PNG
     ./stegomalware.py -d 'imgsrc'
 
     # To create a JPEG-shellscript polyglot image
