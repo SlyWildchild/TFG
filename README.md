@@ -6,7 +6,7 @@
 
 ## Installation
 
-    #Clone this repo
+    #Clone this repository
     git clone https://github.com/SlyWildchild/TFG
 
 ## Quick Start
