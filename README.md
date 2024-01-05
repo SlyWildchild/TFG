@@ -4,7 +4,6 @@
     python3.8
     PIL (Python Imaging Library)
 
-
 ## Installation
 
     #Clone this repo
