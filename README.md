@@ -8,19 +8,19 @@ This project develops a set of tools in Python for advanced image manipulation, 
 
 ## Installation
 
-    #Clone this repository
+    # Clone this repository
     git clone https://github.com/SlyWildchild/TFG
 
 ## Quick Start
 
     # To enconde a script into an image PNG
-    ./stegomalware.py -e 'imgsrc' 'script' 'imgout'
+    ./stegomalware.py -e 'imgsrc.png' 'script' 'imgout.png'
 
     # To enconde a script into a new image PNG
     ./stegomalware.py -e 'script'
 
     # To deconde a script from an image PNG
-    ./stegomalware.py -d 'imgsrc'
+    ./stegomalware.py -d 'imgsrc.png'
 
     # To create a JPEG-shellscript polyglot image
-    ./stegomalware.py -p 'imgsrc' 'script' 'imgout'
+    ./stegomalware.py -p 'imgsrc.jpg' 'script.sh' 'imgout.jpg'
