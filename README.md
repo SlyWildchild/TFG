@@ -1,5 +1,7 @@
 # Stegomalware
 
+This project develops a set of tools in Python for advanced image manipulation, including steganography (data hiding within images) and the creation of polyglot files (files that are valid in multiple formats).
+
 ## Requirements
     python3.8
     PIL (Python Imaging Library)
